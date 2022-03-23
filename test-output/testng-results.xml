@@ -1,69 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="2791" started-at="2022-03-23T22:53:39 AEDT" finished-at="2022-03-23T22:53:42 AEDT">
+  <suite name="Suite" duration-ms="28863" started-at="2022-03-23T23:00:40 AEDT" finished-at="2022-03-23T23:01:08 AEDT">
     <groups>
     </groups>
-    <test name="Verify Gumtree API Response data" duration-ms="2791" started-at="2022-03-23T22:53:39 AEDT" finished-at="2022-03-23T22:53:42 AEDT">
+    <test name="Verify Gumtree API Response data" duration-ms="2929" started-at="2022-03-23T23:00:40 AEDT" finished-at="2022-03-23T23:00:42 AEDT">
       <class name="apichallenge.GumtreeApiChallenge">
-        <test-method status="PASS" signature="setup()[pri:0, instance:apichallenge.GumtreeApiChallenge@17776a8]" name="setup" is-config="true" duration-ms="14" started-at="2022-03-23T22:53:39 AEDT" finished-at="2022-03-23T22:53:39 AEDT">
+        <test-method status="PASS" signature="setup()[pri:0, instance:apichallenge.GumtreeApiChallenge@17776a8]" name="setup" is-config="true" duration-ms="11" started-at="2022-03-23T23:00:40 AEDT" finished-at="2022-03-23T23:00:40 AEDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="verifySydneyWeatherOnThursdays(java.lang.String)[pri:0, instance:apichallenge.GumtreeApiChallenge@17776a8]" name="verifySydneyWeatherOnThursdays" duration-ms="2718" started-at="2022-03-23T22:53:39 AEDT" finished-at="2022-03-23T22:53:42 AEDT">
+        <test-method status="PASS" signature="verifySydneyWeatherOnThursdays(java.lang.String)[pri:0, instance:apichallenge.GumtreeApiChallenge@17776a8]" name="verifySydneyWeatherOnThursdays" duration-ms="2785" started-at="2022-03-23T23:00:40 AEDT" finished-at="2022-03-23T23:00:42 AEDT">
           <params>
             <param index="0">
               <value>
-                <![CDATA[2019 Fusso Fighter 1224]]>
+                <![CDATA[2019 Fuso Fighter 1224]]>
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Verify the title 2019 Fusso Fighter 1224 expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Verify the title 2019 Fusso Fighter 1224 expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:97)
-at org.testng.Assert.failNotEquals(Assert.java:969)
-at org.testng.Assert.assertTrue(Assert.java:43)
-at apichallenge.GumtreeApiChallenge.verifySydneyWeatherOnThursdays(GumtreeApiChallenge.java:70)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(Unknown Source)
-at org.testng.TestRunner.privateRun(TestRunner.java:766)
-at org.testng.TestRunner.run(TestRunner.java:587)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
-at org.testng.TestNG.runSuites(TestNG.java:1039)
-at org.testng.TestNG.run(TestNG.java:1007)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySydneyWeatherOnThursdays -->
       </class> <!-- apichallenge.GumtreeApiChallenge -->
     </test> <!-- Verify Gumtree API Response data -->
+    <test name="Verify Gumtree AdData In UI" duration-ms="25885" started-at="2022-03-23T23:00:43 AEDT" finished-at="2022-03-23T23:01:08 AEDT">
+      <class name="com.businesscomponents.GumtreeCodeChallenge">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:com.businesscomponents.GumtreeCodeChallenge@16267862]" name="initialize" is-config="true" duration-ms="1850" started-at="2022-03-23T23:00:43 AEDT" finished-at="2022-03-23T23:00:44 AEDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="commBankTravelMoneyOverSeas(java.lang.String, java.lang.String)[pri:0, instance:com.businesscomponents.GumtreeCodeChallenge@16267862]" name="commBankTravelMoneyOverSeas" duration-ms="22915" started-at="2022-03-23T23:00:44 AEDT" finished-at="2022-03-23T23:01:07 AEDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Sennheiser Headphones]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Sydney Region, NSW]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- commBankTravelMoneyOverSeas -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.businesscomponents.GumtreeCodeChallenge@16267862]" name="tearDown" is-config="true" duration-ms="1118" started-at="2022-03-23T23:01:07 AEDT" finished-at="2022-03-23T23:01:08 AEDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.businesscomponents.GumtreeCodeChallenge -->
+    </test> <!-- Verify Gumtree AdData In UI -->
   </suite> <!-- Suite -->
 </testng-results>
