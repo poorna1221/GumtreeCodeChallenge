@@ -45,9 +45,19 @@ public class ReusableLibraries extends BaseClass {
 	 * This function compare the expected and actual values and fails the test case
 	 * if the expected and actual values values are not matching
 	 */
-	public void verifyExpectedActualValues(String expectedValue, String actualValue) {
+	public void verifyExpectedActualValues(String expectedValue, String actualValue, String Message) {
 
-		Assert.assertEquals(expectedValue, actualValue);
+		Assert.assertEquals(expectedValue, actualValue, Message);
 
 	}
+
+	/**
+	 * This function verify if the booean value is true
+	 */
+	public void verifyAssertTrue(boolean boolenValue, String Message) {
+
+		Assert.assertTrue(boolenValue, Message);
+
+	}
+
 }
