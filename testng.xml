@@ -3,12 +3,13 @@
 <suite name="Suite">
 
    <test name="Verify Gumtree API Response data">
-   <parameter name = "expectedAdTitle" value="2019 Fuso Fighter 1224"/>
+   <parameter name = "expectedAdTitle" value="RUBBISH REMOVALS"/>
     <classes>
       <class name="apichallenge.GumtreeApiChallenge"/>
     </classes>
   </test>
   
+ 
   <test name="Verify Gumtree AdData In UI">
   <parameter name = "searchCriteria" value="Sennheiser Headphones"/>
   <parameter name = "location" value="Sydney Region, NSW"/>
@@ -16,7 +17,7 @@
       <class name="com.businesscomponents.GumtreeCodeChallenge"/>
     </classes>
   </test>
-  
+ 
 	
    <!-- Test -->
 </suite> <!-- Suite -->
