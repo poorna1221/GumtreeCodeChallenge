@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+   <test name="Verify Gumtree API Response data">
+   <parameter name = "expectedAdTitle" value="2019 Fuso Fighter 1224"/>
+    <classes>
+      <class name="apichallenge.GumtreeApiChallenge"/>
+    </classes>
+  </test>
+  
+  <test name="Verify Gumtree AdData In UI">
+  <parameter name = "searchCriteria" value="Sennheiser Headphones"/>
+  <parameter name = "location" value="Sydney Region, NSW"/>
+    <classes>
+      <class name="com.businesscomponents.GumtreeCodeChallenge"/>
+    </classes>
+  </test>
+  
+	
+   <!-- Test -->
+</suite> <!-- Suite -->
