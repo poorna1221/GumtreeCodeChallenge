@@ -22,7 +22,7 @@ public class GumtreeApiChallenge extends ReusableLibraries {
 
 	// Load configuration properties file
 	@BeforeMethod
-	public void setup() throws IOException {
+	public void setUp() throws IOException {
 
 		prop = loadConfigFile();
 	}
@@ -30,7 +30,7 @@ public class GumtreeApiChallenge extends ReusableLibraries {
 	// Fetch the gumtree api data and validate the response
 	@Test
 	@Parameters({ "expectedAdTitle" })
-	public void verifySydneyWeatherOnThursdays(String expectedAdTitle)
+	public void verifyAdsApiResponse(String expectedAdTitle)
 
 	{
 
@@ -39,17 +39,18 @@ public class GumtreeApiChallenge extends ReusableLibraries {
 		Response response = RestAssured.given().when().get(prop.getProperty("adsApiResource")).then().assertThat()
 				.contentType(ContentType.JSON).extract().response();
 
-		Assert.assertEquals(response.getContentType(), "application/json;charset=UTF-8", "Verify API response type"); // To
-																														// validate
-																														// response
-																														// type
+		verifyExpectedActualValues(response.getContentType(), "application/json;charset=UTF-8",
+				"Verify API response type"); // To
+		// validate
+		// response
+		// type
 
 		Assert.assertEquals(response.statusCode(), 200, "Verify the status code"); // To validate response code
 
-		Assert.assertEquals(response.getHeader("Server"), "rhino-core-shield",
+		verifyExpectedActualValues(response.getHeader("Server"), "rhino-core-shield",
 				"Verify the responser header of server key"); // To validate response header for server value
 
-		Assert.assertEquals(response.getHeader("Content-Encoding"), "gzip",
+		verifyExpectedActualValues(response.getHeader("Content-Encoding"), "gzip",
 				"Verify the responser header of Content-Encoding key"); // To validate response header for
 																		// Content-Encoding value
 
@@ -63,20 +64,11 @@ public class GumtreeApiChallenge extends ReusableLibraries {
 																										// objects
 																										// returned
 
-		System.out.println("allTitles" + js.get("ads.title"));
-
 		List<String> titleList = js.get("ads.title");
 
-		boolean titleFound = false;
+		boolean isTitleFound = titleList.stream().anyMatch(p -> p.equalsIgnoreCase(expectedAdTitle));
 
-		for (int i = 0; i < titleList.size(); i++) {
-			if (expectedAdTitle.equalsIgnoreCase(titleList.get(i))) {
-				titleFound = true;
-			}
-		}
-
-		Assert.assertTrue(titleFound, "Verify the title " + expectedAdTitle); // To validate if the expected title is
-																				// available
-																				// in response payload
+		verifyAssertTrue(isTitleFound, "Verify the title " + expectedAdTitle); // To validate if the expected title is
+																				// available in response payload
 	}
 }
