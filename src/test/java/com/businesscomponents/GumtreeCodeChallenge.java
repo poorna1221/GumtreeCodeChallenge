@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -22,7 +21,7 @@ public class GumtreeCodeChallenge extends ReusableLibraries {
 	GumtreeHomePage homePage;
 
 	@BeforeMethod
-	public void initialize() throws IOException {
+	public void setUp() throws IOException {
 
 		prop = loadConfigFile();
 
@@ -47,7 +46,7 @@ public class GumtreeCodeChallenge extends ReusableLibraries {
 	 */
 	@Test
 	@Parameters({ "searchCriteria", "location" })
-	public void commBankTravelMoneyOverSeas(String searchCriteria, String location) throws InterruptedException {
+	public void verifyAdsData(String searchCriteria, String location) throws InterruptedException {
 
 		driver.get(prop.getProperty("applicationUrl"));
 
@@ -75,13 +74,16 @@ public class GumtreeCodeChallenge extends ReusableLibraries {
 
 		verifyObjectExistense(driver, homePage.userAdvertisementHeaderDetailsPage);
 
-		verifyExpectedActualValues(expectedText, homePage.userAdvertisementHeaderDetailsPage.getText());
+		verifyExpectedActualValues(expectedText, homePage.userAdvertisementHeaderDetailsPage.getText(),
+				"Verify if user is in ad details page");
 
-		Assert.assertTrue(isNumeric(homePage.breadCrumbsSummary.getText().split(" ")[2]));
+		verifyAssertTrue(isNumeric(homePage.breadCrumbsSummary.getText().split(" ")[2]),
+				"Verify if ad id is numeric value");
 
 		verifyObjectExistense(driver, homePage.similarAdsList.get(0));
 
-		Assert.assertTrue(homePage.similarAdsList.size() >= 1);
+		verifyAssertTrue(homePage.similarAdsList.size() >= 1,
+				"Verify if atlesat one similar ad is available in details page");
 
 	}
 
